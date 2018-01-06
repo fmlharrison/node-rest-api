@@ -1,0 +1,12 @@
+{
+  "name": "node-rest-api",
+  "version": "0.0.1",
+  "description": "A Node.js RESTful API tutorial project",
+  "main": "index.js",
+  "author": "Felix Harrison",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
