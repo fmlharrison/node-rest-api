@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the products list 1`] = `
+<div
+  data-product-id="12345"
+>
+  <h4>
+    Happy Meal
+  </h4>
+  <p>
+    5.99
+  </p>
+</div>
+`;
