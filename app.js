@@ -3,10 +3,18 @@ const app = express();
 // morgan is a logging middleware we use to log all of the incoming requests.
 const log = require("morgan");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 // Here you import the controllers that you want your server to use.
 const productRoutes = require("./api/routes/product");
 const orderRoutes = require("./api/routes/orders");
+
+// Use Mongoose as a driver to connect to MongoDB
+mongoose.connect(
+  "mongodb://fmlharrison:" +
+    process.env.MONGO_ATLAS_PW +
+    "@node-rest-api-shard-00-00-svnv4.mongodb.net:27017,node-rest-api-shard-00-01-svnv4.mongodb.net:27017,node-rest-api-shard-00-02-svnv4.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-api-shard-0&authSource=admin"
+);
 
 // Use the morgan middlewear that funnels request to the routes that we want and logs everything.
 app.use(log("dev"));
