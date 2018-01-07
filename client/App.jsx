@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import ProductsList from "./components/ProductsList.jsx";
 
 class App extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }}>
-        <h1>Hello World! This is a React Component.</h1>
+        <h1>List Products</h1>
+        <div><ProductsList /></div>
       </div>
     );
   }
