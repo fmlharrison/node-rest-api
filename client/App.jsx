@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductsList from "./components/ProductsList.jsx";
+import ProductsList from "./products/components/ProductsList.jsx";
 
 class App extends Component {
   render() {

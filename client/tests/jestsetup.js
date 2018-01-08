@@ -8,3 +8,6 @@ Enzyme.configure({ adapter: new Adapter() });
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
+
+// Used for mocking out fetch requests.
+global.fetch = require('jest-fetch-mock');

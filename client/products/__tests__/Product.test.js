@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../Product.jsx";
+import Product from "../components/Product.jsx";
 import { product } from "../__mocks__/Product";
 
 test("render the products list", () => {
