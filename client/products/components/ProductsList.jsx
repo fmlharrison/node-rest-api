@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import Product from "./Product.jsx";
+import { asyncFetch } from "../helpers/fetch";
 
 class ProductsList extends Component {
   constructor(props) {
@@ -10,15 +12,7 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/products")
-      .then(
-        res => {
-          return res.json();
-        },
-        err => {
-          err.json();
-        }
-      )
+    asyncFetch("http://localhost:3000/products")
       .then(data => {
         const products = data.map(item => {
           return {

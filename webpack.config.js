@@ -8,7 +8,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-  entry: './client/index.js',
+  entry: {
+    index: ['babel-polyfill', './client/index.js']
+  },
   devServer: {
     contentBase: './dist'
   },
