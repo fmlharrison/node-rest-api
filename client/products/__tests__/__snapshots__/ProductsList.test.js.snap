@@ -1,5 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Render product list component Renders and fetches products 1`] = `
+<ProductsList>
+  <div>
+    <h3>
+      Available Product
+    </h3>
+    <ul
+      style={
+        Object {
+          "paddingLeft": "0px",
+        }
+      }
+    >
+      <li
+        key="12345"
+        style={
+          Object {
+            "listStyle": "none",
+          }
+        }
+      >
+        <Product
+          info={
+            Object {
+              "_id": "12345",
+              "name": "Happy Meal",
+              "price": 5.99,
+            }
+          }
+        >
+          <div
+            data-product-id="12345"
+          >
+            <h4>
+              Happy Meal
+            </h4>
+            <p>
+              5.99
+            </p>
+          </div>
+        </Product>
+      </li>
+    </ul>
+  </div>
+</ProductsList>
+`;
+
 exports[`Shallow render of ProductList compoent Renders and empty product list 1`] = `
 <div>
   <h3>

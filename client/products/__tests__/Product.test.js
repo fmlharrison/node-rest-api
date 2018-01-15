@@ -9,7 +9,7 @@ test("render the products list", () => {
 
 test("renders with the correct props", () => {
   const wrapper = mount(<Product info={product} />);
-  expect(wrapper.props().info.id).toEqual("12345");
+  expect(wrapper.props().info._id).toEqual("12345");
   expect(wrapper.props().info.name).toEqual("Happy Meal");
   expect(wrapper.props().info.price).toEqual(5.99);
 });

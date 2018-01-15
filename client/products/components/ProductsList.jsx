@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Product from "./Product.jsx";
-import { asyncFetch } from "../helpers/fetch";
+import asyncFetch from "../helpers/fetch";
 
 class ProductsList extends Component {
   constructor(props) {
@@ -12,17 +12,7 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    asyncFetch("http://localhost:3000/products")
-      .then(data => {
-        const products = data.map(item => {
-          return {
-            id: item._id,
-            name: item.name,
-            price: item.price
-          };
-        });
-        this.setState({ products });
-      });
+    asyncFetch.fetchProducts().then(json => this.setState({ products: json }))
   }
 
   render() {
@@ -39,7 +29,7 @@ class ProductsList extends Component {
     return (
       <ul style={{ paddingLeft: "0px" }}>
         {products.map(product => (
-          <li key={product.id} style={{ listStyle: "none" }}>
+          <li key={product._id} style={{ listStyle: "none" }}>
             <Product info={product} />
           </li>
         ))}

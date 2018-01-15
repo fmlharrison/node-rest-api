@@ -1,8 +1,9 @@
 import React from "react";
+import sinon from "sinon";
 
 import ProductsList from "../components/ProductsList.jsx";
 import { product, apiProductResponse } from "../__mocks__/Product";
-import fetchAPI from "../helpers/fetch"
+import fetchAPI from "../helpers/fetch";
 
 function flushPromises() {
   return new Promise(resolve => setImmediate(resolve));
@@ -17,14 +18,19 @@ describe("Shallow render of ProductList compoent", () => {
 
 describe("Render product list component", () => {
   it("Renders and fetches products", () => {
-    fetch.mockResponse(JSON.stringify(apiProductResponse), {status: 200});
+    const promise = Promise.resolve(apiProductResponse);
+    sinon.stub(fetchAPI, "fetchProducts").callsFake(() => promise);
 
     const wrapper = mount(<ProductsList />);
-    expect(wrapper.state().products.length).toEqual(0);
-    
-    return flushPromises().then(() => {
-      expect(wrapper.state().products.length).toEqual(1);
-      expect(fetch.mock.calls).toHaveLength(1);
-    })
+
+    return promise
+      .then(() => {
+        expect(wrapper.state().products).toHaveLength(1);
+
+        wrapper.update();
+      })
+      .then(() => {
+        expect(wrapper).toMatchSnapshot();
+      });
   });
 });
