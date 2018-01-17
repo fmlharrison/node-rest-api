@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Product from "./Product.jsx";
+import ProductsButton from "./ProductsButton.jsx";
 import asyncFetch from "../helpers/fetch";
 
 class ProductsList extends Component {
@@ -12,17 +13,24 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    asyncFetch.fetchProducts().then(json => this.setState({ products: json }))
+    asyncFetch.fetchProducts().then(json => this.setState({ products: json }));
   }
 
   render() {
     return (
       <div>
         <h3>Available Product</h3>
+        <div>
+          <ProductsButton showProducts={this.fetchMoreProducts} />
+        </div>
         {this.renderProductList()}
       </div>
     );
   }
+
+  fetchMoreProducts = () => {
+    asyncFetch.fetchProducts().then(json => this.setState({ products: json }));
+  };
 
   renderProductList = () => {
     const { products } = this.state;

@@ -6,6 +6,15 @@ exports[`Render product list component Renders and fetches products 1`] = `
     <h3>
       Available Product
     </h3>
+    <div>
+      <ProductsButton>
+        <button
+          onClick={[Function]}
+        >
+          Show Products
+        </button>
+      </ProductsButton>
+    </div>
     <ul
       style={
         Object {
@@ -52,6 +61,9 @@ exports[`Shallow render of ProductList compoent Renders and empty product list 1
   <h3>
     Available Product
   </h3>
+  <div>
+    <ProductsButton />
+  </div>
   <ul
     style={
       Object {
