@@ -11,6 +11,7 @@ exports[`Render product list component Renders and fetches products 1`] = `
         showProducts={[Function]}
       >
         <button
+          id="show-products"
           onClick={[Function]}
         >
           Show Products

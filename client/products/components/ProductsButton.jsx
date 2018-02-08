@@ -8,7 +8,7 @@ class ProductsButton extends Component {
   };
 
   render() {
-    return <button onClick={this.handleClick}>Show Products</button>;
+    return <button id="show-products" onClick={this.handleClick}>Show Products</button>;
   }
 }
 

@@ -2,6 +2,7 @@
 
 exports[`Renders button component 1`] = `
 <button
+  id="show-products"
   onClick={[Function]}
 >
   Show Products
