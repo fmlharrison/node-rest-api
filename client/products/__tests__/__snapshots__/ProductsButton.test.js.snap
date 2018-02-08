@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders button 1`] = `
+exports[`Renders button component 1`] = `
 <button
   onClick={[Function]}
 >

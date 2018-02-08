@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a form to add a new product 1`] = `
+<div>
+  <form>
+    <label
+      for="product-name"
+    >
+      Product Name
+    </label>
+    <br />
+    <input
+      id="product-name"
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      for="product-price"
+    >
+      Price
+    </label>
+    <br />
+    <input
+      id="product-price"
+      name="price"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    <input
+      type="submit"
+      value="Add Product"
+    />
+  </form>
+</div>
+`;
